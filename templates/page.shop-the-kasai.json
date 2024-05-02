@@ -1,0 +1,66 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "the_kasai_story_footer_tNhxjz": {
+      "type": "The-Kasai-Story-Footer",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/michlein.webp",
+        "overlay_text": "Shop The Kasai"
+      }
+    },
+    "right_image_with_text_7nnLHD": {
+      "type": "Right-Image-With-Text",
+      "settings": {
+        "section_image": "shopify:\/\/shop_images\/Rectangle_28_a626b0c6-9616-45b5-a370-b41bcb649bc6.png",
+        "heading_text": "The Kasai Grills",
+        "description_text": "Kasai Konro Grills are inspired by World famous japanese design. They are traditional heat source used to make delicious meat, fish and vegetables.Enjoyed by the best restaurants chefs and best users , Kasai is more than a charcoal grill.",
+        "button_label": "Buy The Kasai Grills",
+        "product_link": "shopify:\/\/products\/nano-pro-kasai"
+      }
+    },
+    "left_image_with_text_H43fQp": {
+      "type": "Left-Image-With-Text",
+      "settings": {
+        "section_image": "shopify:\/\/shop_images\/images.jpg",
+        "heading_text": "The Kasai Accesories",
+        "description_text": "Kasai Konro Grills are inspired by World famous japanese design. They are traditional heat source used to make delicious meat, fish and vegetables.Enjoyed by the best restaurants chefs and best users , Kasai is more than a charcoal grill.",
+        "button_label": "Buy The Kasai Accessories",
+        "product_link": "shopify:\/\/products\/kasai-pro-2"
+      }
+    },
+    "right_image_with_text_wbJ6PJ": {
+      "type": "Right-Image-With-Text",
+      "settings": {
+        "section_image": "shopify:\/\/shop_images\/image1.png",
+        "heading_text": "The Kasai Bundles",
+        "description_text": "Kasai Konro Grills are inspired by World famous japanese design. They are traditional heat source used to make delicious meat, fish and vegetables.Enjoyed by the best restaurants chefs and best users , Kasai is more than a charcoal grill.",
+        "button_label": "Buy The Kasai Bundles",
+        "product_link": "shopify:\/\/products\/long-kasai"
+      }
+    },
+    "left_image_with_text_QPNiL4": {
+      "type": "Left-Image-With-Text",
+      "settings": {
+        "section_image": "shopify:\/\/shop_images\/istockphoto-1147918259-612x612_6383a1d4-4e73-42fe-8323-8c4d6ce24d01.jpg",
+        "heading_text": "The Kasai Charcoal",
+        "description_text": "Kasai Konro Grills are inspired by World famous japanese design. They are traditional heat source used to make delicious meat, fish and vegetables.Enjoyed by the best restaurants chefs and best users , Kasai is more than a charcoal grill.",
+        "button_label": "Buy The Kasai Charcoal",
+        "product_link": "shopify:\/\/products\/kasai-pro-2"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "the_kasai_story_footer_tNhxjz",
+    "right_image_with_text_7nnLHD",
+    "left_image_with_text_H43fQp",
+    "right_image_with_text_wbJ6PJ",
+    "left_image_with_text_QPNiL4"
+  ]
+}

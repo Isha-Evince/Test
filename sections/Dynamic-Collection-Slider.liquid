@@ -1,0 +1,164 @@
+<style>
+  .dynamic-product-carousal {
+  margin-left: 100px; /* Adjust as needed */
+  margin-right: 100px; /* Adjust as needed */
+}
+
+</style>
+<!-- Add the slick-theme.css if you want default styling -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<!-- Add the slick-theme.css if you want default styling -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<div class="dynamic-page-width">
+  <h2>{{ section.settings.title }}</h2>
+  <div class="dynamic-product-carousal"
+       data-total-products="{{ section.settings.total_products }}"
+       data-slides-to-show="{{ section.settings.slides_to_show }}"
+       data-autoplay="{{ section.settings.autoplay }}"
+       data-loop="{{ section.settings.loop }}"
+       data-drag="{{ section.settings.drag }}"
+       data-mobile-slides-to-show="{{ section.settings.mobile_slides_to_show }}">
+    {% assign collection = collections[section.settings.collection] %}
+    {% for product in collection.products limit: section.settings.total_products %}
+      <div class="dynamic-product-card">
+        <a href="{{ product.url | within: collection }}">
+          <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.featured_image.alt | escape }}">
+          <h3>{{ product.title }}</h3>
+          <p>{{ product.price | money }}</p>
+        </a>
+        <input name="id" value="{{ product.variants.first.id }}" type="hidden" id="variantId" />
+        <button type="button" name="custom-add-to-cart-bestseller" id="collection-cart-{{ product.id }}">Add to cart</button>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var carouselContainer = document.querySelector('.dynamic-product-carousal');
+    var totalProducts = parseInt(carouselContainer.dataset.totalProducts, 10);
+    var slidesToShow = parseInt(carouselContainer.dataset.slidesToShow, 10);
+    var autoplay = carouselContainer.dataset.autoplay === 'true';
+    var loop = carouselContainer.dataset.loop === 'true';
+    var drag = carouselContainer.dataset.drag === 'true';
+    var mobileSlidesToShow = parseInt(carouselContainer.dataset.mobileSlidesToShow, 10);
+
+    $('.dynamic-product-carousal').slick({
+      dots: true,
+      infinite: loop,
+      speed: 300,
+      slidesToShow: slidesToShow,
+      slidesToScroll: 1,
+      arrows: true,
+      autoplay: autoplay,
+      draggable: drag,
+      responsive: [
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: mobileSlidesToShow,
+            slidesToScroll: mobileSlidesToShow
+          }
+        }
+      ]
+    });
+
+    var addToCartButtons = document.querySelectorAll('[name="custom-add-to-cart-bestseller"]');
+    addToCartButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        var getVariantId = this.parentNode.querySelector('#variantId').value;
+        let formobj = {
+          quantity: 1,
+          id: getVariantId
+        };
+
+        $.ajax({
+          type: 'POST',
+          url: '/cart/add.js',
+          contentType: 'application/json',
+          data: JSON.stringify(formobj),
+          dataType: 'json',
+          success: function(data) {
+            console.log('Success:', data);
+            window.location.href = '/cart';
+          },
+          error: function(xhr, textStatus, errorThrown) {
+            console.error('Error:', errorThrown);
+          }
+        });
+      });
+    });
+  });
+</script>
+
+
+{% schema %}
+{
+  "name": "Dynamic Collection Slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Featured Collection"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "total_products",
+      "label": "Total Number of Slides To view",
+      "min": 2,
+      "max": 20,
+      "step": 1,
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "slides_to_show",
+      "label": "Number of Products to View",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Auto Play",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "loop",
+      "label": "Loop",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "drag",
+      "label": "Drag",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "mobile_slides_to_show",
+      "label": "Number of Slides to Show on Mobile",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 1
+    }
+  ],
+  "presets": [
+    {
+      "name": "Dynamic Collection Slider"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,322 @@
+<!-- Add the slick-theme.css if you want default styling -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+<!-- Add the slick-theme.css if you want default styling -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<style>
+  .product-slider-container {
+    margin-left: 100px; /* Adjust as needed */
+    margin-right: 100px; /* Adjust as needed */
+  }
+  .slick-prev:before, .slick-next:before {
+    font-family: 'slick';
+    font-size: 20px;
+    line-height: 1;
+    opacity: .75;
+    color: #288eb8;
+    -webkit-font-smoothing: antialiased;
+  }
+</style>
+
+<div class="product-slider-container">
+   {% if section.blocks.size > 0 %}
+    {% assign total_products_slides = section.settings.total_products_slides | plus: 0 %}
+    {% if section.blocks.size > total_products_slides %}
+    {% endif %}
+  <div class="product-slider"
+       data-total-products="{{ section.settings.total_products_slides }}"
+       data-total-mobile-slides="{{ section.settings.total_mobile_slides }}"
+       data-desktop-total-products="{{ section.settings.desktop_total_products }}"
+       data-autoplay-desktop="{{ section.settings.autoplay_desktop }}"
+       data-loop-desktop="{{ section.settings.loop_desktop }}"
+       data-drag-desktop="{{ section.settings.drag_desktop }}"
+       data-autoplay-mobile="{{ section.settings.autoplay_mobile }}"
+       data-loop-mobile="{{ section.settings.loop_mobile }}"
+       data-drag-mobile="{{ section.settings.drag_mobile }}"
+       data-mobile-products-to-show="{{ section.settings.mobile_products_to_show }}">
+  
+    {% for block in section.blocks limit: section.settings.total_products_slides %}
+      {% assign product = block.settings.selected_product %}
+      <div class="product-slide">
+        <a href="{{ block.settings.custom_url | default: product.url }}">
+          <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.featured_image.alt | escape }}">
+          <h3>{{ block.settings.custom_title | default: product.title }}</h3>
+          <p>{{ product.price | money }}</p>
+        </a>
+        <input name="id" value="{{ product.variants.first.id }}" type="hidden" id="variantId" />
+        <button type="button" name="custom-add-to-cart" id="product-cart-{{ product.id }}">Add to Cart</button>
+      </div>
+    {% endfor %}
+  </div>
+     {% endif %}
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var sliderContainer = document.querySelector('.product-slider');
+  var totalProducts = parseInt(sliderContainer.dataset.totalProducts, 10);
+  var totalMobileSlides = parseInt(sliderContainer.dataset.totalMobileSlides, 10);
+  var desktopTotalProducts = parseInt(sliderContainer.dataset.desktopTotalProducts, 10);
+  var autoplayDesktop = sliderContainer.dataset.autoplayDesktop === 'true';
+  var loopDesktop = sliderContainer.dataset.loopDesktop === 'true';
+  var dragDesktop = sliderContainer.dataset.dragDesktop === 'true';
+  var autoplayMobile = sliderContainer.dataset.autoplayMobile === 'true';
+  var loopMobile = sliderContainer.dataset.loopMobile === 'true';
+  var dragMobile = sliderContainer.dataset.dragMobile === 'true';
+  var mobileProductsToShow = parseInt(sliderContainer.dataset.mobileProductsToShow, 10);
+
+  var slickOptions = {
+    dots: true,
+    infinite: loopDesktop,
+    speed: 300,
+    slidesToShow: desktopTotalProducts,
+    slidesToScroll: 1,
+    arrows: true,
+    autoplay: autoplayDesktop,
+    autoplaySpeed: 3000,
+    draggable: dragDesktop,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: Math.min(totalProducts, desktopTotalProducts),
+          slidesToScroll: 1,
+          infinite: loopDesktop,
+          autoplay: autoplayDesktop,
+          autoplaySpeed: 2000,
+          draggable: dragDesktop
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+
+        slidesToShow: Math.min(totalProducts, mobileProductsToShow),
+        slidesToScroll: 1,
+          infinite: loopMobile,
+          autoplay: autoplayMobile,
+          autoplaySpeed: 2000,
+          draggable: dragMobile
+        }
+      }
+    ]
+  };
+
+  $('.product-slider').slick(slickOptions);
+
+  var addToCartButtons = document.querySelectorAll('[name="custom-add-to-cart"]');
+  addToCartButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      var getVariantId = this.parentNode.querySelector('#variantId').value;
+      let formobj = {
+        quantity: 1,
+        id: getVariantId
+      };
+
+      $.ajax({
+        type: 'POST',
+        url: '/cart/add.js',
+        contentType: 'application/json',
+        data: JSON.stringify(formobj),
+        dataType: 'json',
+        success: function(data) {
+          console.log('Success:', data);
+          window.location.href = '/cart';
+        },
+        error: function(xhr, textStatus, errorThrown) {
+          console.error('Error:', errorThrown);
+        }
+      });
+    });
+  });
+});
+</script>
+
+{% schema %}
+{
+  "name": "Dynamic Product Slider",
+  "max_blocks": 20,
+  "settings": [
+    {
+      "type": "select",
+      "id": "total_products_slides",
+      "label": "Total Number of Slides",
+      "options": [
+        {
+          "value": "4",
+          "label": "4"
+        },
+        {
+          "value": "6",
+          "label": "6"
+        },
+        {
+          "value": "8",
+          "label": "8"
+        }
+      ],
+      "default": "6"
+    },
+    {
+    "type": "select",
+    "id": "desktop_total_products",
+    "label": "Number of Products to Show on Desktop",
+    "options": [
+      {
+        "value": "3",
+        "label": "3"
+      },
+      {
+        "value": "4",
+        "label": "4"
+      },
+      {
+        "value": "6",
+        "label": "6"
+      }
+    ],
+      "default": "3"
+    },
+    {
+      "type": "header",
+      "content": "Desktop Settings"
+    },
+    {
+      "type": "radio",
+      "id": "autoplay_desktop",
+      "label": "Auto Play",
+      "options": [
+        {
+          "value": "true",
+          "label": "ON"
+        },
+        {
+          "value": "false",
+          "label": "OFF"
+        }
+      ],
+      "default": "true"
+    },
+    {
+      "type": "checkbox",
+      "id": "loop_desktop",
+      "label": "Loop",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "drag_desktop",
+      "label": "Drag",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Mobile Settings"
+    },
+    {
+      "type": "select",
+      "id": "total_mobile_slides",
+      "label": "Total Number of Slides on Mobile",
+      "options": [
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        },
+        {
+          "value": "4",
+          "label": "4"
+        }
+      ],
+      "default": "3"
+    },
+    {
+    "type": "select",
+    "id": "mobile_products_to_show",
+    "label": "Number of Products to Show on Slide",
+    "options": [
+      {
+        "value": "2",
+        "label": "2"
+      },
+      {
+        "value": "3",
+        "label": "3"
+      },
+      {
+        "value": "4",
+        "label": "4"
+      }
+    ],
+    "default": "2"
+  },
+    {
+      "type": "radio",
+      "id": "autoplay_mobile",
+      "label": "Auto Play",
+      "options": [
+        {
+          "value": "true",
+          "label": "ON"
+        },
+        {
+          "value": "false",
+          "label": "OFF"
+        }
+      ],
+      "default": "true"
+    },
+    {
+      "type": "checkbox",
+      "id": "loop_mobile",
+      "label": "Loop",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "drag_mobile",
+      "label": "Drag",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "selected_product",
+          "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "custom_title",
+          "label": "Custom Title",
+          "info": "Leave blank to use the product title"
+        },
+        {
+          "type": "url",
+          "id": "custom_url",
+          "label": "Custom URL",
+          "info": "Leave blank to use the product URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Dynamic Product Slider",
+      "blocks": [
+        {
+          "type": "product"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

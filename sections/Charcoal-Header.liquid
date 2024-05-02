@@ -1,0 +1,104 @@
+<style>
+
+  .section-header-kasai-charcoal12 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* Adjust margin as needed */
+  }
+
+  .section-header-kasai-charcoal12 h2 {
+    margin: 0; /* Remove default margin */
+  }
+  
+  .section-header-kasai-charcoal12 .view-all-link {
+    text-decoration: none;
+    color: #333; /* Adjust color as needed */
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px solid #ccc; /* Adjust color as needed */
+    margin: 0;
+    padding: 0;
+  }
+
+  .collection-display-charcoal56 {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping to next line */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    justify-content: flex-start;
+    margin-bottom: 40px; /* Adjust margin to reduce space between rows */
+    margin-left: 30px;
+  }
+
+  .collection-item-charcoal34 {
+    flex: 0 0 calc(16.666% - 20px); /* Adjust width as needed */
+    margin-right: 10px; /* Adjust margin between items */
+    border-radius: 10px; /* Add rounded corners */
+    overflow: hidden; /* Ensure image stays within rounded corners */
+  }
+
+  .collection-item-charcoal34 a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .collection-item-charcoal34 img {
+    width: 100px; /* Adjust image size */
+    height: 100px; /* Adjust image size */
+    border-radius: 50%; /* Make image circular */
+    object-fit: cover; /* Maintain aspect ratio */
+  }
+
+  .collection-item-charcoal34 p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+  }
+</style>
+
+<div class="section-header-kasai-charcoal12">
+  <h2>{{ section.settings.collection_header_title }}</h2>
+  <a href="{{ collections[section.settings.selected_collections].url }}" class="view-all-link">Shop All</a>
+</div>
+<hr>
+{% assign selected_collections = section.settings.selected_collections %}
+
+{% if selected_collections.size > 0 %}
+  <div class="collection-display-charcoal56">
+    {% for product in collections[section.settings.selected_collections].products limit:6 %}
+      <div class="collection-item-charcoal34">        
+        <a href="{{ product.url }}">
+          <img src="{{ product.featured_image.src | img_url: 'small' }}" alt="{{ product.featured_image.alt }}">
+          <p>{{ product.title }}</p>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Charcoal Header",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "selected_collections",
+      "label": "Select Collections"
+    },
+    {
+      "type": "text",
+      "id": "collection_header_title",
+      "label": "Kasai Grills"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Charcoal Header",
+      "category": "Products"
+    }
+  ]
+}
+{% endschema %}

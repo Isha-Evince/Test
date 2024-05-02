@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-login",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "login_image_picker": "shopify:\/\/shop_images\/Rectangle_27.png"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

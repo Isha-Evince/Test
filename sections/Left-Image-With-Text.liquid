@@ -1,0 +1,80 @@
+<style>
+  /* Example styles */
+.image-with-heading-section-footer {
+  display: flex;
+  align-items: center;
+}
+
+.image-container-footer {
+  flex: 1;
+  padding: 20px;
+}
+
+.image-container-footer img {
+  max-width: 100%;
+}
+
+.heading-content {
+  flex: 1;
+  padding: 20px;
+}
+  .custom-button-banks {
+    padding: 10px 20px;
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none; /* Ensure no underline on the button */
+  }
+
+</style>
+<div class="image-with-heading-section-footer">
+  <div class="image-container-footer">
+    <img src="{{ section.settings.section_image | img_url: 'master' }}" alt="Image">
+  </div>
+  <div class="heading-content">
+    <h2>{{ section.settings.heading_text }}</h2>
+    <p>{{ section.settings.description_text }}</p>
+     <div class="button-container">
+      <a href="{{ section.settings.product_link }}" class="custom-button-banks">{{ section.settings.button_label }}</a>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Left Image With Text",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "section_image",
+      "label": "Section Image"
+    },
+    {
+      "type": "text",
+      "id": "heading_text",
+      "label": "Section Title"
+    },
+    {
+      "type": "textarea",
+      "id": "description_text",
+      "label": "Section Description"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label"
+    },
+    {
+      "type": "url",
+      "id": "product_link",
+      "label": "Product Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Left Image With Text"
+    }
+  ]
+}
+{% endschema %}

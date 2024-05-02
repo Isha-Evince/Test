@@ -1,0 +1,29 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "the_kasai_story_footer_EyRV4n": {
+      "type": "The-Kasai-Story-Footer",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/Rectangle_26.png",
+        "overlay_text": "Refund Policy"
+      }
+    },
+    "simple_one_line_text_nz4Nwq": {
+      "type": "Simple-One-Line-Text",
+      "settings": {
+        "text": "The privacy Policy Describes how your Personal Information is collected, Used , and shared when your visit make a purchase from swim-club theme myshopify.com."
+      }
+    }
+  },
+  "order": [
+    "main",
+    "the_kasai_story_footer_EyRV4n",
+    "simple_one_line_text_nz4Nwq"
+  ]
+}

@@ -1,0 +1,100 @@
+<style>
+  /* Your existing CSS styles */
+  
+  .collection-display {
+    /* margin-bottom: 40px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+     position: absolute;
+  }
+
+  .collection-names {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+  }
+
+  .collection-item {
+    width: calc(25% - 10px); /* 4 items per row with margin */
+
+  }
+
+  .section-image {
+    margin-left: auto; /* Push the image to the right */
+  }
+
+  .section-image img {
+    max-width: 200px; /* Adjust image size as needed */
+    height: auto;
+    margin-left: 1000px;
+  }
+ .view-all-link,
+  .collection-item a {
+    text-decoration: none; /* Remove underline from URL links */
+  }
+    .shopify-section.section {
+    display: none;
+}
+  hr {
+  margin: 0;
+  padding: 0;
+}
+</style>
+
+<div class="section-header-kasai-header2124">
+  <h2>{{ section.settings.collection_header_title }}</h2>
+  <a href="{{ collections[section.settings.selected_collections].url }}" class="view-all-link">Shop All</a>
+</div>
+<hr>
+<div class="kasai-accesssories-3434">
+  {% assign selected_collection = section.settings.selected_collections %}
+
+  {% if selected_collection.size > 0 %}
+    <div class="collection-display">
+      <div class="collection-names">
+        {% for product in collections[selected_collection].products %}
+          <div class="collection-item">        
+            <a href="{{ product.url }}">
+              <p class="collection-title">{{ product.title }}</p>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% if section.settings.section_image != blank %}
+      <div class="section-image">
+        <img src="{{ section.settings.section_image | img_url: 'master' }}" alt="Section Image">
+      </div>
+    {% endif %}
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Kasai Accessories Header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "collection_header_title",
+      "label": "Section Title"
+    },
+    {
+      "type": "collection",
+      "id": "selected_collections",
+      "label": "Select Collections"
+    },
+    {
+      "type": "image_picker",
+      "id": "section_image",
+      "label": "Section Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Kasai Accessories Header"
+    }
+  ]
+}
+{% endschema %}

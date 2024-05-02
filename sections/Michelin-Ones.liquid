@@ -1,0 +1,93 @@
+{% stylesheet %}
+.custom-section-2 .text-container-2 .m-o-2 {
+  color: black;
+}
+.custom-section-2 .text-container-2 .m-o-3 {
+  color: black;
+  font-weight: bold;
+}
+{% endstylesheet %}
+<style>
+  .custom-section-2 {
+    display: flex;
+    align-items: center;
+    color: black;
+    padding: 20px;
+    background-color: #f5f5f5; /* Background color */
+  }
+
+  .text-container-2 {
+    flex: 1;
+    margin-right: 20px; /* Add margin to create space between text and image */
+  }
+
+  .image-container-2 {
+    flex: 0 0 auto; /* Disable flex growth for the image container */
+    width: 400px; /* Set a larger width for the image container */
+    height: 400px; /* Set a larger height for the image container */
+    border-radius: 50%; /* Display the image in a round shape */
+    overflow: hidden; /* Hide any overflowing content */
+  }
+
+  .image-block-2 img {
+    width: 100%; /* Ensure the image covers the entire container */
+    height: 100%; /* Ensure the image covers the entire container */
+    object-fit: cover; /* Ensure the image covers the entire container */
+  }
+
+  .additional-text {
+    margin-top: 10px;
+  }
+</style>
+
+<div class="custom-section-2">
+  <div class="text-container-2">
+    <h2 class = "m-o-2">{{ section.settings.heading }}</h2>
+    <h3 class = "m-o-3">{{ section.settings.subheading }}</h3>
+    <p>{{ section.settings.description }}</p>
+    <p>{{ section.settings.additional_text }}</p> <!-- Additional text -->
+  </div>
+  <div class="image-container-2">
+    <div class="image-block-2">
+      <img src="{{ section.settings.image | img_url: 'large' }}" alt="Image">
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Michelin-Ones",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "textarea",
+      "id": "additional_text",
+      "label": "Additional Text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Michelin-Ones"
+    }
+  ]
+}
+{% endschema %}

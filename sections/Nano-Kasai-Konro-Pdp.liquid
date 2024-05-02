@@ -1,0 +1,229 @@
+{% stylesheet %}
+.custom-section-konro .text-container .heading-ambassador-section-konro {
+  color: black;
+  font-weight: bold;
+}
+.custom-section-konro .text-container .subheading-ambassador-section-s {
+  color: black;
+}
+{% endstylesheet %}
+
+<style>
+  .custom-section-konro {
+    display: flex;
+    align-items: center;
+    color: black;
+    padding: 20px;
+    background-color: #ededed;
+  }
+
+  .image-container {
+    flex: 1;
+    margin-left: 20px;
+  }
+
+  .image-block img {
+    width: 100%;
+    height: auto;
+  }
+
+  .text-container {
+    flex: 2;
+  }
+
+  .custom-button-konro {
+    padding: 10px 20px;
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none; /* Ensure no underline on the button */
+  }
+.custom-section-konro.heading-ambassador-section-konro {
+  color: black; /* Set the color to black */
+  font-size: 24px; /* Example font size */
+  font-weight: bold; /* Example font weight */
+  margin-bottom: 10px; /* Example margin bottom */
+}
+
+.custom-section-konro.subheading-ambassador-section {
+  color: red; /* Set the color to red */
+  font-size: 18px; /* Example font size */
+  font-weight: normal; /* Example font weight */
+  margin-bottom: 10px; /* Example margin bottom */
+}
+  .collapsible-sections {
+  margin-top: 20px;
+}
+
+.collapsible-section {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.collapsible-header {
+  background-color: #f4f4f4;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.collapsible-header h3 {
+  margin: 0;
+}
+
+.collapsible-content {
+  padding: 15px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.collapsible-section.expanded .collapsible-content {
+  max-height: 1000px; /* Adjust this value to fit your content */
+}
+
+</style>
+<div class="custom-section-konro">
+  <div class="text-container">
+    <p class="heading-ambassador-section-konro">{{ section.settings.heading }}</p>
+    <p class="subheading-ambassador-section-s">{{ section.settings.subheading }}</p>
+
+    <div class="collapsible-sections">
+      <div class="collapsible-section">
+        <div class="collapsible-header">
+          <h3>{{ section.settings.product_description_title }}</h3>
+          <span class="collapsible-icon">▼</span>
+        </div>
+        <div class="collapsible-content">
+          <p>{{ section.settings.product_description_content }}</p>
+        </div>
+      </div>
+
+      <div class="collapsible-section">
+        <div class="collapsible-header">
+          <h3>{{ section.settings.product_specification_title }}</h3>
+          <span class="collapsible-icon">▼</span>
+        </div>
+        <div class="collapsible-content">
+          <p>{{ section.settings.product_specification_title }}</p>
+        </div>
+      </div>
+
+       <div class="collapsible-section">
+        <div class="collapsible-header">
+          <h3>{{ section.settings.product_oberseas_delivery_options_title }}</h3>
+          <span class="collapsible-icon">▼</span>
+        </div>
+        <div class="collapsible-content">
+          <p>{{ section.settings.product_oberseas_delivery_options_content }}</p>
+        </div>
+      </div>
+
+      <div class="collapsible-section">
+        <div class="collapsible-header">
+          <h3>{{ section.settings.product_uk_delivery_ooption_title }}</h3>
+          <span class="collapsible-icon">▼</span>
+        </div>
+        <div class="collapsible-content">
+          <p>{{ section.settings.product_uk_delivery_ooption_content }}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="image-container">
+    <div class="image-block">
+      <img src="{{ section.settings.image | img_url: 'large' }}" alt="Image">
+    </div>
+  </div>
+</div>
+<script>
+  const collapsibleSections = document.querySelectorAll('.collapsible-section');
+
+// Add click event listener to each collapsible header
+collapsibleSections.forEach((section) => {
+  const header = section.querySelector('.collapsible-header');
+  const content = section.querySelector('.collapsible-content');
+  const icon = header.querySelector('.collapsible-icon');
+
+  header.addEventListener('click', () => {
+    section.classList.toggle('expanded');
+    content.style.maxHeight = content.style.maxHeight ? null : `${content.scrollHeight}px`;
+    icon.textContent = section.classList.contains('expanded') ? '▲' : '▼';
+  });
+})
+</script>
+{% schema %}
+{
+  "name": "Nano Kasai Konro",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "text",
+      "id": "product_description_title",
+      "label": "Product Description Title"
+    },
+    {
+      "type": "textarea",
+      "id": "product_description_content",
+      "label": "Product Description Content"
+    },
+    {
+      "type": "text",
+      "id": "product_specification_title",
+      "label": "Product Description Title"
+    },
+    {
+      "type": "textarea",
+      "id": "product_specification_content",
+      "label": "Product Description Content"
+    },
+    {
+      "type": "text",
+      "id": "product_oberseas_delivery_options_title",
+      "label": "Product Description Title"
+    },
+    {
+      "type": "textarea",
+      "id": "product_oberseas_delivery_options_content",
+      "label": "Product Description Content"
+    },
+    {
+      "type": "text",
+      "id": "product_uk_delivery_ooption_title",
+      "label": "Product Description Title"
+    },
+    {
+      "type": "textarea",
+      "id": "product_uk_delivery_ooption_content",
+      "label": "Product Description Content"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Nano Kasai Konro"
+    }
+  ]
+}
+{% endschema %}
+

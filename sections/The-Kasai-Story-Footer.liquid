@@ -1,0 +1,55 @@
+<style>
+  .full-width-image-section {
+  position: relative;
+  height: 400px; /* Adjust height as needed */
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.big-text {
+  font-size: 36px;
+  color:white;
+  font-weight: bold;
+}
+
+.shopify-section.section {
+    display: none;
+}
+</style>
+<div class="full-width-image-section" style="background-image: url('{{ section.settings.background_image | img_url: 'master' }}');">
+  <div class="overlay">
+    <h1 class="big-text">{{ section.settings.overlay_text }}</h1>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Our Story",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "The Kasai Story"
+    },
+    {
+      "type": "text",
+      "id": "overlay_text",
+      "label": "The Kasai Story"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Our Story"
+    }
+  ]
+}
+{% endschema %}

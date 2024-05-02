@@ -1,0 +1,205 @@
+{
+  "sections": {
+    "custom_video_banner": {
+      "type": "Video-Banner",
+      "settings": {
+        "url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/69f65fcad379427baf6fc5e353f8d771.mp4",
+        "text_content": "<h1><strong>First There Was Fire. Then, The Kasai..<\/strong><\/h1>",
+        "description": "Kasai Konro charcoal grills are inspired by world famous Japanese design. They’re a traditional heat source used to make delicious meats, fish, and vegetables.",
+        "button_label": "Buy The Kasai",
+        "product_link": "shopify:\/\/collections\/best-sellers"
+      }
+    },
+    "section_1_JWqqAr": {
+      "type": "Section-1",
+      "settings": {
+        "small_title": "ABOUT BRAND",
+        "title": "Going Back To Basics",
+        "description": "Kasai Konro charcoal grills are inspired by world famous Japanese design. They’re a traditional heat source used to make delicious meats, fish, and vegetables. Enjoyed by the best restaurant chefs and home users, Kasai is more than a charcoal grill. It’s a versatile bit of kit that can hold anything from kebabs, to yakitori skewers, and even hold your pans for you with interchangeable racks.",
+        "image1": "shopify:\/\/shop_images\/Rectangle_24.png",
+        "button_text": "Buy The Kasai",
+        "button_link": "shopify:\/\/collections\/kasai-colelction"
+      }
+    },
+    "custom_collection_slider_BpfBBb": {
+      "type": "Custom-Collection-Slider",
+      "settings": {
+        "title": "The Kasai Bestseller",
+        "collection": "kasai-colelction"
+      }
+    },
+    "key_features_GMamMG": {
+      "type": "Key-features",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Rectangle_33.png",
+        "heading": "<h1><strong>Key Features<\/strong><\/h1>",
+        "subheading": "specialist design",
+        "description": "The tiles for our Kasai Grills are made from vermiculite, which goes through an exfoliation process to become our Kasai Tile. We offer replacement tiles to restaurants and home users once the tiles reach end of life. The old tiles are then ground and given to gardeners to use as an effective soil conditioner."
+      }
+    },
+    "kasai_collection_68Rjnp": {
+      "type": "Kasai-Collection",
+      "settings": {
+        "collection_title": "KASAI COLLECTIONS",
+        "collection_handle": "kasai-colelction",
+        "button_text": "Shop Now",
+        "url": ""
+      }
+    },
+    "ambassador_section_4EVx7B": {
+      "type": "Ambassador-Section",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Link_5a40a005-a8e4-40fd-840a-70c159ae5a6f_jpg.png",
+        "heading": "Our ambassador",
+        "subheading": "Tommy Banks",
+        "description": "Banks was born and raised in the small North Yorkshire village of Oldstead. He grew up there with his older brother, James, and parents, Tom and Anne Banks.\n\nBanks comes from a farming background, with the Banks family farming in and around Oldstead for five generations. The Banks family also ran a B&B from their family home before buying their local pub, The Black Swan, in 2006.",
+        "button_label": "Buy The Kasai",
+        "product_link": "shopify:\/\/products\/little-kasai"
+      }
+    },
+    "japanese_inspired_jTJLpf": {
+      "type": "Japanese-Inspired",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Rectangle_26.png",
+        "image_logo": "shopify:\/\/shop_images\/logo-made-in-britain.049cb127.webp",
+        "heading": "<p><strong>Japanese Inspired. Truly British<\/strong><\/p>",
+        "description": "Kasai Konro charcoal grills are inspired by world famous Japanese design. They're a traditional heat source used to make delicious meats, fish, and vegetables. Enjoyed by the best restaurant chefs and home users, Kasai is more than a charcoal grill.",
+        "button_label": "Buy The Kasai",
+        "product_link": "shopify:\/\/products\/nano-pro-kasai"
+      }
+    },
+    "kasai_popular_bYQNhh": {
+      "type": "Kasai-Popular",
+      "settings": {
+        "collection_title": "The Kasai Popular",
+        "collection_handle": "kasai-popular"
+      }
+    },
+    "michelin_ones_PbK3Tx": {
+      "type": "Michelin-Ones",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/michlein.webp",
+        "heading": "Loved by the Starts",
+        "subheading": "including Michlein Ones",
+        "description": "Michlein star Head Chef, Tommy Banks Uses Our kasai while cooking  at home , and in both of his Michlein star restaurants; The black swan at  Oldstaed, and roots in york.",
+        "additional_text": "LISA ALLEN"
+      }
+    },
+    "british_made_kasai_grill_G8VGBH": {
+      "type": "British-Made-Kasai-Grill",
+      "settings": {
+        "image1": "shopify:\/\/shop_images\/Rectangle_27.png",
+        "image2": "shopify:\/\/shop_images\/Rectangle_28.png",
+        "image3": "shopify:\/\/shop_images\/image1.png",
+        "heading": "<p><strong>Customize your British made Kasai Grill<\/strong><\/p>",
+        "subheading": "Customize your British made Kasai Grill",
+        "description": "Kasai Konro charcoal grills are inspired by world famous Japanese design. They’re a traditional heat source used to make delicious meats, fish, and vegetables. Enjoyed by the best restaurant chefs and home users, Kasai is more than a charcoal grill. It’s a versatile bit of kit that can hold anything from kebabs, to yakitori skewers, and even hold your pans for you with interchangeable racks."
+      }
+    },
+    "newsletter_subscribe_j7BzML": {
+      "type": "Newsletter-subscribe",
+      "settings": {
+        "text": "SIGNUP TO OUR NEWSLETTER AND GET SPECIAL OFFER",
+        "button_text": "SUBSCRIBE",
+        "button_url": "shopify:\/\/products\/kasai-pro1",
+        "description": "By Pressing the button \"Subscribe\" , you have read and are aggreing to our privacy policy regarding the storage of the data submitted through this form."
+      }
+    },
+    "dynamic_product_slider_zhtKWk": {
+      "type": "Dynamic-Product-Slider",
+      "blocks": {
+        "product_Wn9zga": {
+          "type": "product",
+          "settings": {
+            "selected_product": "tshirt",
+            "custom_title": "Product 1",
+            "custom_url": ""
+          }
+        },
+        "product_iq8pCN": {
+          "type": "product",
+          "settings": {
+            "selected_product": "kasai-pro1",
+            "custom_title": "",
+            "custom_url": ""
+          }
+        },
+        "product_JFqzzw": {
+          "type": "product",
+          "settings": {
+            "selected_product": "little-kasai",
+            "custom_title": "",
+            "custom_url": ""
+          }
+        },
+        "product_qH4kz7": {
+          "type": "product",
+          "settings": {
+            "selected_product": "long-kasai",
+            "custom_title": "Product3",
+            "custom_url": ""
+          }
+        },
+        "product_yE6ePr": {
+          "type": "product",
+          "settings": {
+            "selected_product": "nano-pro-kasai",
+            "custom_title": "",
+            "custom_url": ""
+          }
+        },
+        "product_YjRzE3": {
+          "type": "product",
+          "settings": {
+            "selected_product": "robata-editions",
+            "custom_title": "",
+            "custom_url": ""
+          }
+        },
+        "product_Y3KHrw": {
+          "type": "product",
+          "settings": {
+            "selected_product": "wall-paper",
+            "custom_title": "",
+            "custom_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_Wn9zga",
+        "product_iq8pCN",
+        "product_JFqzzw",
+        "product_qH4kz7",
+        "product_yE6ePr",
+        "product_YjRzE3",
+        "product_Y3KHrw"
+      ],
+      "settings": {
+        "total_products_slides": "6",
+        "desktop_total_products": "4",
+        "autoplay_desktop": "true",
+        "loop_desktop": false,
+        "drag_desktop": false,
+        "total_mobile_slides": "2",
+        "autoplay_mobile": "true",
+        "loop_mobile": false,
+        "drag_mobile": true,
+        "mobile_products_to_show": "3"
+      }
+    }
+  },
+  "order": [
+    "custom_video_banner",
+    "section_1_JWqqAr",
+    "custom_collection_slider_BpfBBb",
+    "key_features_GMamMG",
+    "kasai_collection_68Rjnp",
+    "ambassador_section_4EVx7B",
+    "japanese_inspired_jTJLpf",
+    "kasai_popular_bYQNhh",
+    "michelin_ones_PbK3Tx",
+    "british_made_kasai_grill_G8VGBH",
+    "newsletter_subscribe_j7BzML",
+    "dynamic_product_slider_zhtKWk"
+  ]
+}

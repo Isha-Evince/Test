@@ -1,0 +1,133 @@
+<style>
+  .key-features {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+  }
+
+  .key-features__content {
+    flex: 1;
+    margin-right: 40px;
+  }
+
+  .key-features__thumbnails {
+    display: flex;
+    margin-top: 20px;
+  }
+
+  .key-features__thumbnail {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 10px;
+    cursor: pointer;
+    opacity: 0.7;
+  }
+
+  .key-features__thumbnail--active {
+    opacity: 1;
+  }
+
+  .key-features__image {
+    flex: 1;
+  }
+
+  .key-features__image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .key-features__thumbnail--active::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  border-radius: 50%;
+  border: 10px solid red;
+}
+</style>
+
+
+<div class="key-features">
+  <div class="key-features__content">
+    <h2>{{ section.settings.heading }}</h2>
+    <h3>{{ section.settings.subheading }}</h3>
+    <p>{{ section.settings.description }}</p>
+    <div class="key-features__thumbnails">
+      <img class="key-features__thumbnail key-features__thumbnail--active" src="{{ section.settings.thumbnail_image_1 | img_url: 'small' }}" data-full="{{ section.settings.thumbnail_image_1 | img_url: 'large' }}" alt="Thumbnail Image 1">
+      <img class="key-features__thumbnail" src="{{ section.settings.thumbnail_image_2 | img_url: 'small' }}" data-full="{{ section.settings.thumbnail_image_2 | img_url: 'large' }}" alt="Thumbnail Image 2">
+      <img class="key-features__thumbnail" src="{{ section.settings.thumbnail_image_3 | img_url: 'small' }}" data-full="{{ section.settings.thumbnail_image_3 | img_url: 'large' }}" alt="Thumbnail Image 3">
+    </div>
+  </div>
+  <div class="key-features__image">
+    <img src="{{ section.settings.thumbnail_image_1 | img_url: 'large' }}" id="key-features__main-image" alt="Main Image">
+  </div>
+</div>
+
+<script>
+  const thumbnails = document.querySelectorAll('.key-features__thumbnail');
+  const mainImage = document.getElementById('key-features__main-image');
+
+  thumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener('click', () => {
+      mainImage.src = thumbnail.dataset.full;
+      thumbnails.forEach(t => t.classList.remove('key-features__thumbnail--active'));
+      thumbnail.classList.add('key-features__thumbnail--active');
+    });
+  });
+</script>
+
+
+{% schema %}
+{
+  "name": "Zoom Image On Click",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Zoom Image On Click"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Specialist Design"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+      
+    },
+    {
+      "type": "image_picker",
+      "id": "main_image",
+      "label": "Main Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "thumbnail_image_1",
+      "label": "Thumbnail Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "thumbnail_image_2",
+      "label": "Thumbnail Image 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "thumbnail_image_3",
+      "label": "Thumbnail Image 3"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Zoom Image On Click"
+    }
+  ]
+}
+{% endschema %}

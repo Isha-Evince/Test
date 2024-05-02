@@ -1,0 +1,98 @@
+<style>
+  .custom-section-british-kasai {
+    display: flex;
+    align-items: center;
+    color: black; /* Change the text color as needed */
+    padding: 20px;
+    background-color: #3d4d47;
+  }
+
+  .image-container-custom {
+    flex: 1;
+    margin-right: 20px; /* Adjust spacing between image and text */
+    display: flex; /* Display images as a flex container */
+  }
+
+  .image-block img {
+    width: 100%; /* Make the image take up 100% of its container width */
+    height: auto;
+  }
+   .image-block:nth-child(1) img {
+    height: 300px; /* Set the height of the first image */
+  }
+
+  .image-block:nth-child(2) img {
+    height: 150px; /* Set the height of the second image */
+  }
+
+  .image-block:nth-child(3) img {
+    height: 150px; /* Set the height of the third image */
+  }
+
+.text-container {
+    flex: 2;
+  }
+
+</style>
+
+<div class="custom-section-british-kasai">
+  <div class="image-container-custom">
+    <div class="image-block">
+      <img src="{{ section.settings.image1 | img_url: 'large' }}" alt="Image 1">
+    </div>
+    <div class="image-block">
+      <img src="{{ section.settings.image2 | img_url: 'large' }}" alt="Image 2">
+    </div>
+    <div class="image-block">
+      <img src="{{ section.settings.image3 | img_url: 'large' }}" alt="Image 3">
+    </div>
+  </div>
+  <div class="text-container">
+    <h2 style="color: white;">{{ section.settings.heading }}</h2>
+    <h3 style="color: white;">{{ section.settings.subheading }}</h3>
+    <p style="color: white;">{{ section.settings.description }}</p>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "British Made Kasai",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image1",
+      "label": "Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image2",
+      "label": "Image 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "image3",
+      "label": "Image 3"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    }
+  ],
+  "presets": [
+    {
+      "name": "British Made Kasai"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,72 @@
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement-bar-0": {
+          "type": "announcement",
+          "settings": {
+            "text": "Welcome to our store",
+            "link": "shopify:\/\/collections"
+          }
+        },
+        "announcement_hrC3Vf": {
+          "type": "announcement",
+          "settings": {
+            "text": "Offers available",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement-bar-0",
+        "announcement_hrC3Vf"
+      ],
+      "custom_css": [
+        ".announcement-bar__announcement {background-color: #000000;}",
+        ",.utility-bar.color-scheme-1.gradient {background-color: black;}",
+        ",.announcement-bar__message {color: white;}",
+        ",.slider-button.slider-button--next {color: white;}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "show_line_separator": false,
+        "show_social": false,
+        "auto_rotate": true,
+        "change_slides_speed": 3,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
+    },
+    "header": {
+      "type": "header",
+      "custom_css": [
+        ".header-wrapper {background-color: #294230; \/* Dark green color *\/}",
+        ",.header__menu-item {color: white;}",
+        ",.header__icon {color: #ffffff;}",
+        ",.header__active-menu-item {color: #fff;}"
+      ],
+      "settings": {
+        "logo_position": "middle-center",
+        "menu": "main-menu",
+        "menu_type_desktop": "mega",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": true,
+        "color_scheme": "scheme-1",
+        "menu_color_scheme": "scheme-1",
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "mobile_logo_position": "center",
+        "margin_bottom": 0,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}

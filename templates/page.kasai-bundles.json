@@ -1,0 +1,33 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "kasai_bundles_header_CXxDeL": {
+      "type": "Kasai-Bundles-Header",
+      "settings": {
+        "selected_collections": "best-sellers",
+        "collection_header_title": "Kasai Bundles"
+      }
+    },
+    "video_banner_hmixd6": {
+      "type": "Video-Banner",
+      "settings": {
+        "url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/69f65fcad379427baf6fc5e353f8d771.mp4",
+        "text_content": "<p>First There Was Fire, Then The Kasai<\/p>",
+        "description": "Kasai Konro Grills are inspired by World famous japanese design. They are traditional heat source used to make delicious meat, fish and vegetables.",
+        "button_label": "Buy The Kasai",
+        "product_link": "shopify:\/\/collections\/kasai-bundles"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "kasai_bundles_header_CXxDeL",
+    "video_banner_hmixd6"
+  ]
+}

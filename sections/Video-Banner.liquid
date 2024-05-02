@@ -1,0 +1,73 @@
+<style>
+  .video-with-text-section {
+    position: relative;
+    width: 100%;
+  }
+
+  .video-with-text-section video {
+    width: 100%;
+    height: auto;
+    filter: blur(5px); /* Apply blur effect to the video */
+  }
+
+  .text-content {
+    position: absolute;
+    top: 50%;
+    left: 10%; /* Adjust the left offset of the text content */
+    transform: translateY(-50%);
+    z-index: 1; /* Ensure text content appears above the video */
+    color: white;
+    text-align: left; /* Align text content to the left */
+    width: 30%; /* Adjust the width of the text content as needed */
+  }
+</style>
+
+<div class="video-with-text-section">
+  <video muted="true" playsinline="true" autoplay="true" src="{{ section.settings.url }}"></video>
+  <div class="text-content">
+    <b>{{ section.settings.text_content }}</b>
+    <p>{{ section.settings.description }}</p>
+    <div class="button-container">
+      <a href="{{ section.settings.product_link }}" class="custom-button-banks">{{ section.settings.button_label }}</a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Custom Video Banner",
+  "settings": [
+    {
+      "type": "url",
+      "id": "url",
+      "label": "Video (MP4 format)"
+    },
+    {
+      "type": "richtext",
+      "id": "text_content",
+      "label": "Text Content",
+      "default": "<p>Enter your text here</p>"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    },
+     {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label"
+    },
+    {
+      "type": "url",
+      "id": "product_link",
+      "label": "Product Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Video Banner"
+    }
+  ]
+}
+{% endschema %}

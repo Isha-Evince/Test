@@ -1,0 +1,100 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "the_kasai_story_footer_LxkQJf": {
+      "type": "The-Kasai-Story-Footer",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/Rectangle_33_86e9b3c8-6aad-4f1d-a718-7371eb1dc18a.png",
+        "overlay_text": "The Kasai Story"
+      }
+    },
+    "right_image_with_text_wJHRpR": {
+      "type": "Right-Image-With-Text",
+      "settings": {
+        "section_image": "shopify:\/\/shop_images\/images_3.jpg",
+        "heading_text": "Experience The Best In Charcoal Cooking",
+        "description_text": "Kasai Konro Grills are inspired by World famous japanese design. They are traditional heat source used to make delicious meat, fish and vegetables.Enjoyed by the best restaurants chefs and best users , Kasai is more than a charcoal grill.",
+        "button_label": "But The Kasai",
+        "product_link": "shopify:\/\/collections\/best-sellers"
+      }
+    },
+    "left_image_with_text_wGaJbp": {
+      "type": "Left-Image-With-Text",
+      "settings": {
+        "section_image": "shopify:\/\/shop_images\/Link_5a40a005-a8e4-40fd-840a-70c159ae5a6f_jpg.png",
+        "heading_text": "Our Ambassador",
+        "description_text": "Michlein star Head Chef, Tommy Banks Uses Kasai while cooking at home, and in both of his Michlein Star Restaurants.\nKasai Konro Grills are inspired by World famous japanese design. They are traditional heat source used to make delicious meat, fish and vegetables.Enjoyed by the best restaurants chefs and best users , Kasai is more than a charcoal grill.",
+        "button_label": "Buy The Kasai",
+        "product_link": "shopify:\/\/products\/kasai-pro-2"
+      }
+    },
+    "zoom_image_on_click_Q7UY34": {
+      "type": "Zoom-Image-On-Click",
+      "settings": {
+        "heading": "Key Features",
+        "subheading": "specialist design",
+        "description": "Compact, versatile and designed for home use.This Iconic Structure of the kasai uses a special insulating material that reflects heat back into the grill.",
+        "main_image": "shopify:\/\/shop_images\/Rectangle_28_a626b0c6-9616-45b5-a370-b41bcb649bc6.png",
+        "thumbnail_image_1": "shopify:\/\/shop_images\/images_6_7a168a5b-48cc-4ea5-a628-3fc7170b4d30.jpg",
+        "thumbnail_image_2": "shopify:\/\/shop_images\/images_2.jpg",
+        "thumbnail_image_3": "shopify:\/\/shop_images\/Rectangle_27.png"
+      }
+    },
+    "text_on_background_image_rwwKJj": {
+      "type": "Text-On-Background-Image",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/istockphoto-1147918259-612x612.jpg",
+        "logo_image": "shopify:\/\/shop_images\/logo-made-in-britain.049cb127.webp",
+        "heading_text": "Japanese Inspired. Truly British",
+        "description_text": "Kasai Konro Grills are inspired by World famous japanese design. They are traditional heat source used to make delicious meat, fish and vegetables.Enjoyed by the best restaurants chefs and best users , Kasai is more than a charcoal grill.",
+        "button_label": "Buy The Kasai",
+        "product_link": "shopify:\/\/collections\/kasai-colelction"
+      }
+    },
+    "kasai_collection_y3d3y9": {
+      "type": "Kasai-Collection",
+      "settings": {
+        "collection_title": "Shop The Kasai Collection",
+        "collection_handle": "kasai-popular",
+        "button_text": "",
+        "url": ""
+      }
+    },
+    "left_image_with_text_zdQEBd": {
+      "type": "Left-Image-With-Text",
+      "settings": {
+        "section_image": "shopify:\/\/shop_images\/istockphoto-855022728-170667a.webp",
+        "heading_text": "Cooking with a conscience",
+        "description_text": "Kasai Konro Grills are inspired by World famous japanese design. They are traditional heat source used to make delicious meat, fish and vegetables.Enjoyed by the best restaurants chefs and best users , Kasai is more than a charcoal grill.",
+        "button_label": "Buy The Kasai",
+        "product_link": "shopify:\/\/collections\/kasai-colelction"
+      }
+    },
+    "newsletter_subscribe_4PmTpz": {
+      "type": "Newsletter-subscribe",
+      "settings": {
+        "text": "Signup To Our NewsLetter And Get Special Offer",
+        "button_text": "Subscribe",
+        "button_url": "",
+        "description": "By Pressing the Button \"Subscribe\", you confirm that you have read and are aggreing to our privacy policy regarding the storage of the data submitted to its form."
+      }
+    }
+  },
+  "order": [
+    "main",
+    "the_kasai_story_footer_LxkQJf",
+    "right_image_with_text_wJHRpR",
+    "left_image_with_text_wGaJbp",
+    "zoom_image_on_click_Q7UY34",
+    "text_on_background_image_rwwKJj",
+    "kasai_collection_y3d3y9",
+    "left_image_with_text_zdQEBd",
+    "newsletter_subscribe_4PmTpz"
+  ]
+}

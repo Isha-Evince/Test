@@ -1,0 +1,73 @@
+<style>
+
+.image-with-heading-section-footer-right {
+  display: flex;
+  align-items: center;
+}
+
+.image-container-footer-right {
+  flex: 1;
+  padding: 20px;
+  order: 2; /* Set the order to 2 to display the image on the right */
+}
+
+.image-container-footer-right img {
+  max-width: 100%;
+}
+
+.heading-content {
+  flex: 1;
+  padding: 20px;
+  order: 1; /* Set the order to 1 to display the content on the left */
+}
+
+</style>
+<div class="image-with-heading-section-footer-right">
+  <div class="heading-content">
+    <h2>{{ section.settings.heading_text }}</h2>
+    <p>{{ section.settings.description_text }}</p>
+    <div class="button-container">
+      <a href="{{ section.settings.product_link }}" class="custom-button-banks">{{ section.settings.button_label }}</a>
+    </div>
+  </div>
+  <div class="image-container-footer-right">
+    <img src="{{ section.settings.section_image | img_url: 'master' }}" alt="Image">
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Right Image With Text",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "section_image",
+      "label": "Section Image"
+    },
+    {
+      "type": "text",
+      "id": "heading_text",
+      "label": "Section Title"
+    },
+    {
+      "type": "textarea",
+      "id": "description_text",
+      "label": "Section Description"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label"
+    },
+    {
+      "type": "url",
+      "id": "product_link",
+      "label": "Product Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Right Image With Text"
+    }
+  ]
+}
+{% endschema %}

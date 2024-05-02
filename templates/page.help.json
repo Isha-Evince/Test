@@ -1,0 +1,40 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "the_kasai_story_footer_icFfTq": {
+      "type": "The-Kasai-Story-Footer",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/Rectangle_27.png",
+        "overlay_text": "We're  here to help"
+      }
+    },
+    "leave_us_message_UhdKy8": {
+      "type": "Leave-Us-Message",
+      "settings": {
+        "heading": "Questions? Get In Touch",
+        "email": "Email",
+        "email_display": "info@kasaigrill.com",
+        "phone_no": "Phone",
+        "phone_no_display": "1-1234-223-45-67",
+        "address": "Address",
+        "address_display": "2464 Royal Ln. Mesa, New Jersy45463",
+        "social_media": "Social Media",
+        "button_label": "Contact Now",
+        "contact_link": "",
+        "contact_us_heading": "Leave Us A Message",
+        "contact_us_content": "Complete this form and we'll be get back to you"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "the_kasai_story_footer_icFfTq",
+    "leave_us_message_UhdKy8"
+  ]
+}

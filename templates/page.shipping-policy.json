@@ -1,0 +1,30 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "the_kasai_story_footer_BQ7b79": {
+      "type": "The-Kasai-Story-Footer",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/Rectangle_26.png",
+        "overlay_text": "Shipping Policy"
+      }
+    },
+    "heading_content_Ywk6Up": {
+      "type": "Heading-Content",
+      "settings": {
+        "heading": "Shipping Policy",
+        "content": "<ul><li>The Kasai Konro grill is a traditional Japanese<\/li><li>A The Kasai Konro grill is a traditional Japanese<\/li><li>a The Kasai Konro grill is a traditional Japanese<\/li><li>a The Kasai Konro grill is a traditional Japanese<\/li><li>a The Kasai Konro grill is a traditional Japanese<\/li><li>d The Kasai Konro grill is a traditional Japanese<\/li><\/ul>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "the_kasai_story_footer_BQ7b79",
+    "heading_content_Ywk6Up"
+  ]
+}

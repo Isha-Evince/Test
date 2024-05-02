@@ -1,0 +1,99 @@
+<style>
+
+  .image-picker-preview {
+    width: 100px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .full-width-image-section-logo-footer {
+  position: relative;
+  height: 400px; /* Adjust height as needed */
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  color: white;
+}
+
+.big-text-logo {
+  font-size: 36px;
+  color:white;
+  font-weight: bold;
+}
+.shopify-section.section {
+  display: none;
+}
+.description {
+  color:white;
+}
+
+    .custom-button-footer-buy-the-kasai {
+    padding: 10px 20px;
+    background-color: red;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none; /* Ensure no underline on the button */
+  }
+</style>
+<div class="full-width-image-section-logo-footer" style="background-image: url('{{ section.settings.background_image | img_url: 'master' }}');">
+  <div class="overlay">
+     <img src="{{ section.settings.logo_image | img_url: 'master' }}" alt="Image" class="image-picker-preview">
+    <h1 class="big-text-logo">{{ section.settings.heading_text }}</h1>
+    <p class= "description">{{ section.settings.description_text }}</p>
+     <div class="button-container">
+      <a href="{{ section.settings.product_link }}" class="custom-button-footer-buy-the-kasai">{{ section.settings.button_label }}</a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Text On Background Image",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "The Kasai Story"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_image",
+      "label": "The Kasai Story"
+    },
+    {
+      "type": "text",
+      "id": "heading_text",
+      "label": "The Kasai Story"
+    },
+    {
+      "type": "textarea",
+      "id": "description_text",
+      "label": "The Kasai Story"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label"
+    },
+    {
+      "type": "url",
+      "id": "product_link",
+      "label": "Product Link"
+    }
+    
+  ],
+  "presets": [
+    {
+      "name": "Text On Background Image"
+    }
+  ]
+}
+{% endschema %}

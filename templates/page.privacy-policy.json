@@ -1,0 +1,61 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "the_kasai_story_footer_rL9zp4": {
+      "type": "The-Kasai-Story-Footer",
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/Rectangle_26.png",
+        "overlay_text": "Privacy Policy"
+      }
+    },
+    "simple_one_line_text_YyRk3g": {
+      "type": "Simple-One-Line-Text",
+      "settings": {
+        "text": "The privacy Policy Describes how your Personal Information is collected, Used , and shared when your visit make a purchase from swim-club theme myshopify.com."
+      }
+    },
+    "heading_content_BfbJKe": {
+      "type": "Heading-Content",
+      "settings": {
+        "heading": "Last Updated: May 2018",
+        "content": "1. Introduction\nHow We Your Information \n2. Introduction\nHow We Your Information \n3. Introduction\nHow We Your Information \n4. Introduction\nHow We Your Information \n5. Introduction\nHow We Your Information"
+      }
+    },
+    "heading_content_UzMYrB": {
+      "type": "Heading-Content",
+      "settings": {
+        "heading": "Introduction",
+        "content": "The Kasai Konro grill is a traditional Japanese charcoal grill that has gained popularity both in Japan and internationally for its unique design and cooking capabilities. Here's an introduction to the Kasai Konro grill:The Kasai Konro grill is a traditional Japanese charcoal grill that has gained popularity both in Japan and internationally for its unique design and cooking capabilities. Here's an introduction to the Kasai Konro grill:"
+      }
+    },
+    "heading_content_J3xFrE": {
+      "type": "Heading-Content",
+      "settings": {
+        "heading": "How We Use Your Information",
+        "content": "The Kasai Konro grill is a traditional Japanese charcoal grill that has gained popularity both in Japan and internationally for its unique design and cooking capabilities. Here's an introduction to the Kasai Konro grill:The Kasai Konro grill is a traditional Japanese charcoal grill that has gained popularity both in Japan and internationally for its unique design and cooking capabilities. Here's an introduction to the Kasai Konro grill:\nThe Kasai Konro grill is a traditional Japanese charcoal grill that has gained popularity both in Japan and internationally for its unique design and cooking capabilities. Here's an introduction to the Kasai Konro grill:\nThe Kasai Konro grill is a traditional Japanese charcoal grill that has gained popularity both in Japan and internationally for its unique design and cooking capabilities. Here's an introduction to the Kasai Konro grill:"
+      }
+    },
+    "heading_content_xkpfdM": {
+      "type": "Heading-Content",
+      "settings": {
+        "heading": "Fraud Detection and credit Checks",
+        "content": "The Kasai Konro grill is a traditional Japanese charcoal grill that has gained popularity both in Japan and internationally for its unique design and cooking capabilities. Here's an introduction to the Kasai Konro grill:The Kasai Konro grill is a traditional Japanese charcoal grill that has gained popularity both in Japan and internationally for its unique design and cooking capabilities. Here's an introduction to the Kasai Konro grill:"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "the_kasai_story_footer_rL9zp4",
+    "simple_one_line_text_YyRk3g",
+    "heading_content_BfbJKe",
+    "heading_content_UzMYrB",
+    "heading_content_J3xFrE",
+    "heading_content_xkpfdM"
+  ]
+}

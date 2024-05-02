@@ -1,0 +1,27 @@
+<style>
+  .shopify-section.section {
+    display: none;
+}
+</style>
+<div class="simple-text-section">
+    <p>{{ section.settings.text }}</p>
+</div>
+
+{% schema %}
+{
+  "name": "One Line Text",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "One Line Text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "One Line Text"
+    }
+  ]
+}
+{% endschema %}

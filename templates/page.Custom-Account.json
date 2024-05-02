@@ -1,0 +1,52 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-account",
+      "blocks": {
+        "link_YxqqyY": {
+          "type": "link",
+          "settings": {
+            "my_profile": "shopify:\/\/pages\/charcoal",
+            "my_profile_label": "My Profile"
+          }
+        },
+        "link_kQfAix": {
+          "type": "link",
+          "settings": {
+            "my_profile": "shopify:\/\/pages\/kasai-accessories",
+            "my_profile_label": "Orders"
+          }
+        },
+        "link_3CcNAC": {
+          "type": "link",
+          "settings": {
+            "my_profile": "shopify:\/\/pages\/kasai-grill",
+            "my_profile_label": "Wishlist"
+          }
+        },
+        "link_39hm6e": {
+          "type": "link",
+          "settings": {
+            "my_profile": "shopify:\/\/pages\/our-story",
+            "my_profile_label": "Change Password"
+          }
+        }
+      },
+      "block_order": [
+        "link_YxqqyY",
+        "link_kQfAix",
+        "link_3CcNAC",
+        "link_39hm6e"
+      ],
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "edit_url": "",
+        "account_title": ""
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

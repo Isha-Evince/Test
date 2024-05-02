@@ -1,0 +1,115 @@
+{% stylesheet %}
+.custom-section-banks .text-container .heading-ambassador-section {
+  color: red;
+}
+.custom-section-banks .text-container .subheading-ambassador-section {
+  color: black;
+  font-weight: bold;
+}
+{% endstylesheet %}
+
+<style>
+  .custom-section-banks {
+    display: flex;
+    align-items: center;
+    color: black;
+    padding: 20px;
+  }
+
+  .image-container {
+    flex: 1;
+    margin-left: 20px;
+  }
+
+  .image-block img {
+    width: 100%;
+    height: auto;
+  }
+
+  .text-container {
+    flex: 2;
+  }
+
+  .custom-button-banks {
+    padding: 10px 20px;
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none; /* Ensure no underline on the button */
+  }
+.custom-section-banks.heading-ambassador-section {
+  color: black; /* Set the color to black */
+  font-size: 24px; /* Example font size */
+  font-weight: bold; /* Example font weight */
+  margin-bottom: 10px; /* Example margin bottom */
+}
+
+.custom-section-banks.subheading-ambassador-section {
+  color: red; /* Set the color to red */
+  font-size: 18px; /* Example font size */
+  font-weight: normal; /* Example font weight */
+  margin-bottom: 10px; /* Example margin bottom */
+}
+
+</style>
+
+<div class="custom-section-banks">
+  <div class="text-container">
+    <p class="heading-ambassador-section">{{ section.settings.heading }}</p>
+    <p class="subheading-ambassador-section">{{ section.settings.subheading }}</p>
+    <p>{{ section.settings.description }}</p>
+     <div class="button-container">
+      <a href="{{ section.settings.product_link }}" class="custom-button-banks">{{ section.settings.button_label }}</a>
+    </div>
+  </div>
+  <div class="image-container">
+    <div class="image-block">
+      <img src="{{ section.settings.image | img_url: 'large' }}" alt="Image">
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Tommy Banks",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label"
+    },
+    {
+      "type": "url",
+      "id": "product_link",
+      "label": "Product Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tommy Banks"
+    }
+  ]
+}
+{% endschema %}

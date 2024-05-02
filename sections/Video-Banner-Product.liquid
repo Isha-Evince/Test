@@ -1,0 +1,125 @@
+<style>
+  .video-with-text-section-product {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: #3d4d47;
+    position: relative; /* Required for positioning the button */
+  }
+
+  .video-container-product {
+    flex: 1;
+    margin-right: 20px; /* Adjust margin between video and text content */
+    position: relative; /* Required for positioning the button */
+    overflow: hidden; /* Hide overflowing parts of the video */
+    border-radius: 10%; /* Make the container circular */
+  }
+
+  .video-container-product video {
+    width: 100%;
+    height: auto;
+    border-radius: 10%; /* Make the video circular */
+  }
+
+  .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+    color: #000; /* Button text color */
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .text-content-product {
+    flex: 1;
+    color: white;
+    text-align: left;
+  }
+
+  .button-container-recipe {
+    margin-top: 20px; /* Adjust margin for button container */
+  }
+
+  .custom-button-recipe {
+    padding: 10px 20px;
+    background-color: #bf1741;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none; /* Ensure no underline on the button */
+  }
+</style>
+
+<div class="video-with-text-section-product">
+  <div class="video-container-product">
+    <video id="productVideo" muted autoplay src="{{ section.settings.recipe_url }}"></video>
+    <button class="play-button" id="playButton">&#9654; Play</button>
+  </div>
+  <div class="text-content-product">
+    <b>{{ section.settings.text_content }}</b>
+    <p>{{ section.settings.description }}</p>
+    <div class="button-container-recipe">
+      <a href="{{ section.settings.product_link }}" class="custom-button-recipe">{{ section.settings.button_label }}</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Pause the video initially
+  var video = document.getElementById('productVideo');
+  video.pause();
+
+  document.getElementById('playButton').addEventListener('click', function() {
+    if (video.paused) {
+      video.play();
+      this.innerText = '❚❚ Pause';
+    } else {
+      video.pause();
+      this.innerText = '&#9654; Play';
+    }
+  });
+</script>
+
+
+{% schema %}
+{
+  "name": "Product Video Banner",
+  "settings": [
+    {
+      "type": "url",
+      "id": "recipe_url",
+      "label": "Video (MP4 format)"
+    },
+    {
+      "type": "richtext",
+      "id": "text_content",
+      "label": "Text Content",
+      "default": "<p>Enter your text here</p>"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    },
+     {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label"
+    },
+    {
+      "type": "url",
+      "id": "product_link",
+      "label": "Product Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Video Banner"
+    }
+  ]
+}
+{% endschema %}

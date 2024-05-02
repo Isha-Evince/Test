@@ -1,0 +1,74 @@
+{% stylesheet %}
+.custom-section1 .text-container-key-features h1 {
+  color: white;
+}
+{% endstylesheet %}
+<style>
+  .custom-section1 {
+    display: flex;
+    align-items: center;
+    color: black;
+    padding: 20px;
+    background-color :#3d4d47;
+  }
+
+  .image-container {
+    flex: 1;
+    margin-left: 20px;
+  }
+
+  .image-block img {
+    width: 100%;
+    height: auto;
+  }
+
+  .text-container-key-features {
+    flex: 2;
+  }
+</style>
+
+<div class="custom-section1">
+  <div class="text-container-key-features">
+    <h2 style="color: white;">{{ section.settings.heading }}</h2>
+    <h3 style="color: white;">{{ section.settings.subheading }}</h3>
+    <p style="color: white;">{{ section.settings.description }}</p>
+  </div>
+  <div class="image-container">
+    <div class="image-block">
+      <img src="{{ section.settings.image | img_url: 'large' }}" alt="Image">
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Custom Image with Text",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with Text"
+    }
+  ]
+}
+{% endschema %}

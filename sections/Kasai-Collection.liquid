@@ -1,0 +1,153 @@
+{% stylesheet %}
+.collection-section .kasai-bestseller-collection-title {
+  color: black;
+}
+.collection-section .products .product .product__button {
+  background-color: black;
+  color: white; /* Set text color to contrast with the black background */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none; /* Remove underline from the button */
+}
+.product__button:hover {
+  opacity: 0.8; /* Reduce opacity on hover for visual feedback */
+}
+{% endstylesheet %}
+<style>
+  .collection-section {
+    text-align: center;
+  }
+
+  .products {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent products from wrapping to the next line */
+    overflow-x: auto; /* Enable horizontal scrolling if products exceed container width */
+    margin-bottom: 20px; /* Add some bottom margin to the products container */
+    -ms-overflow-style: none; /* Hide scrollbar in IE */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+  }
+
+  .products::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in Chrome/Safari */
+  }
+
+  .product {
+    flex: 0 0 auto; /* Allow products to shrink or grow based on container width */
+    max-width: calc(25% - 20px); /* Calculate max width to fit four products with margin */
+    margin-right: 20px; /* Add some right margin between products */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+  }
+
+  .product:last-child {
+    margin-right: 0; /* Remove margin from the last product to prevent overflow */
+  }
+
+  .product img {
+    width: 100%; /* Make sure product images fill their container */
+    max-width: 100%; /* Ensure images don't exceed their container's width */
+  }
+
+  .product p {
+    margin: 5px 0; /* Add some margin around product details */
+  }
+
+  #showMoreButton {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+</style>
+
+<div class="collection-section">
+  <h1  class= "kasai-bestseller-collection-title">{{ section.settings.collection_title }}</h1>
+  <div class="products">
+    {% for product in collections[section.settings.collection_handle].products %}
+      <div class="product">
+        <a href="{{ product.url }}">
+          <img src="{{ product.featured_image.src | img_url: 'medium' }}" alt="{{ product.featured_image.alt }}">
+          <p>{{ product.title }}</p>
+          <p>{{ product.price | money }}</p>
+        </a>
+         <input name="id" value="{{ product.variants.first.id }}" type="hidden" id = "variantId"/>
+        <button type = "button" name= "custom-add-to-cart-kasai-collection" id= "collection-cart-{{ product.id }}">Add to cart</button>
+      </div>
+    {% endfor %}
+  </div>
+   <a href="/collections/{{ section.settings.collection_handle }}" class="collection__button">View All</a>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var addToCartButtons = document.querySelectorAll('[name="custom-add-to-cart-kasai-collection"]');
+    
+    addToCartButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        var getVariantId = this.parentNode.querySelector('#variantId').value;
+        // alert(getVariantId);
+
+         let formobj = {
+    quantity: 1,
+    id: getVariantId
+  };
+
+   $.ajax({
+          type: 'POST',
+          url: '/cart/add.js',
+          contentType: 'application/json',
+          data: JSON.stringify(formobj),
+          dataType:'json',
+          showLoader: true,
+          success: function(data) {
+            console.log("successs", data);
+          },
+          error: function(xhr, textStatus, errorThrown) {
+            console.error('Error:', errorThrown);
+          }
+        });
+
+      });
+    });
+  });
+ 
+  
+</script>
+
+{% schema %}
+{
+  "name": "Kasai Collection",
+  "settings": [
+    {
+      "type": "text",
+      "id": "collection_title",
+      "label": "Collection Title"
+    },
+    {
+      "type": "collection",
+      "id": "collection_handle",
+      "label": "Collection",
+      "info": "Select the collection to display"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Learn More"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Kasai Collection"
+    }
+  ]
+}
+{% endschema %}

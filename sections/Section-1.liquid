@@ -1,0 +1,108 @@
+{% stylesheet %}
+.custom-section-about-brand .content-container-about-brand .content .title-about-brand {
+  color: red;
+  font-weight: bold;
+}
+.custom-section-about-brand .content-container-about-brand .content .title-about-brand-title {
+  color: Black;
+  font-weight: bold;
+}
+.custom-section-about-brand .content-container-about-brand .content .title-about-brand-paragraph {
+  color: Black;
+}
+
+{% endstylesheet %}
+<div class="custom-section-about-brand">
+  <div class="image-container-about-brand">
+    <div class="image-block">
+      <img src="{{ section.settings.image1 | img_url: 'medium' }}" alt="Image 1">
+    </div>
+    <div class="image-block">
+      <img src="{{ section.settings.image2 | img_url: 'medium' }}" alt="Image 2">
+    </div>
+  </div>
+  <div class="content-container-about-brand">
+    <div class="content">
+      <h4 class= "title-about-brand">{{ section.settings.small_title }}</h4>
+      <h2 class= "title-about-brand-title">{{ section.settings.title }}</h2>
+      <p class= "title-about-brand-paragraph">{{ section.settings.description }}</p>
+      <a href="{{ section.settings.button_link }}" class="button">{{ section.settings.button_text }}</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .custom-section-about-brand {
+    display: flex; /* Set the container to flexbox */
+    align-items: center; /* Align items vertically */
+  }
+
+  .image-container-about-brand {
+    display: flex; /* Set the image container to flexbox */
+  }
+
+  .image-block {
+    margin-right: 20px; /* Adjust the spacing between images */
+  }
+
+  .content-container-about-brand {
+    flex: 1; /* Allow the content container to grow to fill available space */
+    margin-left: 20px; /* Add left margin for spacing */
+  }
+
+  .content {
+    text-align: left; /* Align the content to the left */
+  }
+</style>
+
+
+{% schema %}
+{
+  "name": "Custom Section 1",
+  "settings": [
+    {
+      "type": "text",
+      "id": "small_title",
+      "label": "Small Heading"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "<p>Welcome to Our Custom Section</p>"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "This is a custom section that you can edit."
+    },
+    {
+      "type": "image_picker",
+      "id": "image1",
+      "label": "Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image2",
+      "label": "Image 2"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Learn More"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Section 1"
+    }
+  ]
+}
+{% endschema %}

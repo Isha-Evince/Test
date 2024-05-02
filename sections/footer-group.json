@@ -1,0 +1,67 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "brand_information_x3j3ex": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        },
+        "link_list_DVkACD": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Company",
+            "menu": "company"
+          }
+        },
+        "link_list_R8KydU": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Kasai Collection",
+            "menu": "kasai-grills"
+          }
+        },
+        "link_list_W64yqT": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Legal",
+            "menu": "legal"
+          }
+        }
+      },
+      "block_order": [
+        "brand_information_x3j3ex",
+        "link_list_DVkACD",
+        "link_list_R8KydU",
+        "link_list_W64yqT"
+      ],
+      "custom_css": [
+        ".footer.color-scheme-1.gradient.section-sections--16074108993596__footer-padding {background-color: #294230;}",
+        ",.rte[data-live-text-setting=\"brand_description\"] {color: white;}",
+        ",.footer-block__heading.inline-richtext {color: white;}",
+        ",.link.link--text.list-menu__item.list-menu__item--link {color: white;}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "newsletter_enable": false,
+        "newsletter_heading": "Subscribe to our emails",
+        "enable_follow_on_shop": true,
+        "show_social": false,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "payment_enable": true,
+        "show_policy": false,
+        "margin_top": 0,
+        "padding_top": 28,
+        "padding_bottom": 20
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}
